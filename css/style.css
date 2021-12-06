@@ -3,4 +3,27 @@
     height: 5rem;
     border-radius: 5rem;
     background-color: cadetblue;
+    transition: all .2s;
+}
+
+.triangulo{
+    background-color: darksalmon;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transition: all .2s;
+    width: 5rem;
+    height: 5rem;
+}
+
+.rectangulo{
+    background-color: darkslategrey;
+    width: 6rem;
+    height: 2rem;
+}
+
+.rombo{
+    background-color:indigo;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    transition: all .2s;
+    width: 5rem;
+    height: 5rem;
 }

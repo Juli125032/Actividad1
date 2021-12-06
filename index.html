@@ -29,13 +29,11 @@
                 <div class="form">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Base</label>
-                        <input id="base" type="number" class="form-control"
-                            placeholder="Base">
+                        <input id="base" type="number" class="form-control" placeholder="Base">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Exponente</label>
-                        <input id="exponente" type="number" class="form-control"
-                            placeholder="Exponente">
+                        <input id="exponente" type="number" class="form-control" placeholder="Exponente">
                     </div>
                     <p id="result" class="fs-6"></p>
 
@@ -47,8 +45,7 @@
                 <div class="form">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Radio</label>
-                        <input id="radio" type="number" class="form-control"
-                            placeholder="Radio">
+                        <input id="radio" type="number" class="form-control" placeholder="Radio">
                     </div>
                     <p id="resultDiametro" class="fs-6"></p>
                     <button type="button" onclick="new Carro(document.querySelector('#radio').valueAsNumber)"
@@ -71,77 +68,140 @@
                                 <div class="form">
                                     <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">Radio</label>
-                                        <input id="radioCircle" type="number" class="form-control"
-                                            placeholder="Radio">
+                                        <input id="radioCircle" type="number" class="form-control" placeholder="Radio">
                                     </div>
-                                    <div class="circle"></div>
+                                    <span id="areaCricle"></span>
                                     <p id="resultAreaCircle" class="fs-6"></p>
-                                    <button type="button" onclick="new Circulo(document.querySelector('#radioCircle').valueAsNumber).calcularArea()"
+                                    <button type="button"
+                                        onclick="new Circulo(document.querySelector('#radioCircle').valueAsNumber, null).calcularArea()"
                                         class="btn btn-primary">Calcular Area</button>
-                                    <button type="button" onclick="new Carro(document.querySelector('#radio').valueAsNumber)"
+                                    <button type="button"
+                                        onclick="new Figura(document.querySelector('#circle')).desplazar()"
                                         class="btn btn-primary">Desplazar</button>
+                                    <button type="button"
+                                        onclick="new Figura(document.querySelector('#circle')).restaurar()"
+                                        class="btn btn-primary">Restaurar</button>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Triangulo
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="form">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Base</label>
+                                    <input id="baseTriangulo" type="number" class="form-control" placeholder="Base">
+                                    <label for="exampleFormControlInput1" class="form-label">Altura</label>
+                                    <input id="alturaTriangulo" type="number" class="form-control" placeholder="Altura">
+                                </div>
+                                <div id="triangulo" class="triangulo"></div>
+                                <p id="resultAreaTriangulo" class="fs-6"></p>
+                                <button type="button"
+                                    onclick="new Triangulo(document.querySelector('#baseTriangulo').valueAsNumber, document.querySelector('#alturaTriangulo').valueAsNumber,).calcularArea()"
+                                    class="btn btn-primary">Calcular Area</button>
+                                <button type="button"
+                                    onclick="new Figura(document.querySelector('#triangulo')).desplazar()"
+                                    class="btn btn-primary">Desplazar</button>
+                                <button type="button"
+                                    onclick="new Figura(document.querySelector('#triangulo')).restaurar()"
+                                    class="btn btn-primary">Restaurar</button>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Triangulo
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>This is the second item's accordion body.</strong> It is hidden by default,
-                                until the collapse plugin adds the appropriate classes that we use to style each
-                                element. These classes control the overall appearance, as well as the showing and hiding
-                                via CSS transitions. You can modify any of this with custom CSS or overriding our
-                                default variables. It's also worth noting that just about any HTML can go within the
-                                <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Rectangulo
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="form">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Base</label>
+                                    <input id="baseRectangulo" type="number" class="form-control" placeholder="Base">
+                                    <label for="exampleFormControlInput1" class="form-label">Altura</label>
+                                    <input id="alturaRectangulo" type="number" class="form-control"
+                                        placeholder="Altura">
+                                </div>
+                                <div id="rectangulo" class="rectangulo"></div>
+                                <p id="resultAreaRectangulo" class="fs-6"></p>
+                                <button type="button"
+                                    onclick="new Rectangulo(document.querySelector('#baseRectangulo').valueAsNumber, document.querySelector('#alturaRectangulo').valueAsNumber).calcularArea()"
+                                    class="btn btn-primary">Calcular Area</button>
+                                <button type="button"
+                                    onclick="new Figura(document.querySelector('#rectangulo')).desplazar()"
+                                    class="btn btn-primary">Desplazar</button>
+                                <button type="button"
+                                    onclick="new Figura(document.querySelector('#rectangulo')).restaurar()"
+                                    class="btn btn-primary">Restaurar</button>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Rectangulo
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until
-                                the collapse plugin adds the appropriate classes that we use to style each element.
-                                These classes control the overall appearance, as well as the showing and hiding via CSS
-                                transitions. You can modify any of this with custom CSS or overriding our default
-                                variables. It's also worth noting that just about any HTML can go within the
-                                <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Rombo
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="form">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Diagonal Menor</label>
+                                    <input id="diagonalMenor" type="number" class="form-control"
+                                        placeholder="Diagonal Menor">
+                                    <label for="exampleFormControlInput1" class="form-label">Diagonal Mayor</label>
+                                    <input id="diagonalMayor" type="number" class="form-control"
+                                        placeholder="Diagonal Mayor">
+                                </div>
+                                <div id="rombo" class="rombo"></div>
+                                <p id="resultAreaRombo" class="fs-6"></p>
+                                <button type="button"
+                                    onclick="new Rombo(document.querySelector('#diagonalMenor').valueAsNumber, document.querySelector('#diagonalMayor').valueAsNumber).calcularArea()"
+                                    class="btn btn-primary">Calcular Area</button>
+                                <button type="button" onclick="new Figura(document.querySelector('#rombo')).desplazar()"
+                                    class="btn btn-primary">Desplazar</button>
+                                <button type="button" onclick="new Figura(document.querySelector('#rombo')).restaurar()"
+                                    class="btn btn-primary">Restaurar</button>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                Rombo
-                            </button>
-                        </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until
-                                the collapse plugin adds the appropriate classes that we use to style each element.
-                                These classes control the overall appearance, as well as the showing and hiding via CSS
-                                transitions. You can modify any of this with custom CSS or overriding our default
-                                variables. It's also worth noting that just about any HTML can go within the
-                                <code>.accordion-body</code>, though the transition does limit overflow.
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4>Clases para manejo de String</h4>
+                <div class="form">
+                    <div class="mb-3">
+                        <span>String</span>
+                        <label for="exampleFormControlInput1" class="form-label">Texto 1</label>
+                        <input id="texto1" type="text" class="form-control" placeholder="Texto 1">
+                        <label for="exampleFormControlInput1" class="form-label">Texto 2</label>
+                        <input id="texto2" type="text" class="form-control" placeholder="Texto 2">
+                        <label for="exampleFormControlInput1" class="form-label">Texto 3</label>
+                        <input id="texto3" type="text" class="form-control" placeholder="Texto 3">
+                        <label for="exampleFormControlInput1" class="form-label">Separador</label>
+                        <input id="separador" type="text" class="form-control" placeholder="Separador">
                     </div>
+                    <p id="textResult"></p>
+                    <button type="button" onclick="string()" class="btn btn-primary">String</button>
+                    <button type="button" onclick="getStringBuffer()" class="btn btn-primary">StringBuffer</button>
+                    <button type="button" onclick="getStringTokenizer()" class="btn btn-primary">StringTokenizer</button>
                 </div>
             </div>
         </div>
